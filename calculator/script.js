@@ -1,52 +1,30 @@
-// Import the `evaluate` function from the mathjs library to safely compute expressions
-import { evaluate } from 'mathjs';
+let input = document.getElementById("inputBox");
+let buttons = document.querySelectorAll("button");
 
-// Get the input box element where expressions and results will be shown
-const input = document.getElementById("inputBox");
+let string = '';
+let arr = Array.from(buttons);
 
-// Select all buttons on the calculator interface
-const buttons = document.querySelectorAll("button");
-
-// Variable to store the current mathematical expression as a string
-let expression = '';
-
-// Convert NodeList to Array for easy iteration using forEach
-Array.from(buttons).forEach(button => {
-    // Add click event listener to each button
+arr.forEach(button => {
     button.addEventListener('click', (e) => {
-        // Get the text inside the clicked button
         const btnVal = e.target.textContent;
 
-        // If "=" is clicked, evaluate the expression using mathjs
         if (btnVal === '=') {
             try {
-                // Evaluate the mathematical expression
-                expression = evaluate(expression).toString();
-                // Show the result in the input box
-                input.value = expression;
+                string = math.evaluate(string).toString(); // use math.evaluate here
+                input.value = string;
             } catch (err) {
-                // If an error occurs (e.g., invalid expression), show "Error"
                 input.value = "Error";
-                expression = ''; // Clear the stored expression
+                string = '';
             }
-        }
-
-        // If "AC" is clicked, clear the expression and input field
-        else if (btnVal === 'AC') {
-            expression = '';
-            input.value = expression;
-        }
-
-        // If "DEL" is clicked, remove the last character from the expression
-        else if (btnVal === 'DEL') {
-            expression = expression.slice(0, -1); // Remove last char
-            input.value = expression;
-        }
-
-        // For numbers and operators, append the clicked value to the expression
-        else {
-            expression += btnVal;
-            input.value = expression;
+        } else if (btnVal === 'AC') {
+            string = '';
+            input.value = string;
+        } else if (btnVal === 'DEL') {
+            string = string.slice(0, -1);
+            input.value = string;
+        } else {
+            string += btnVal;
+            input.value = string;
         }
     });
 });
