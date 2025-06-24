@@ -6,7 +6,7 @@
 
 A simple web-based Lorem Ipsum generator that lets you customize the number of paragraphs, words per paragraph, HTML tags, and more — all built with **HTML**, **CSS**, and **JavaScript**.
 
-!(screenshot.png) <!-- optional: add your own screenshot image -->
+![screenshot](screenshot.png)
 
 ## 🚀 Features
 
