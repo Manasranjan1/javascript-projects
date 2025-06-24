@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loreum Ipsum Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container1">
+        <div class="container2">
+            <div class="site-name">
+                <h1>Lorem Ipsum Generator</h1>
+
+            </div>
+            <div class="range-option">
+                <div class="num-paragraph">
+                    <p>Paragraph:</p>
+                    <input type="range" id="numPara">
+                </div>
+                <div class="word-paragraph">
+                    <p>Wprd per Paragraph:</p>
+                    <input type="range" id="wordPara">
+                </div>
+            </div>
+            <div class="tags">
+                <p>Tag:</p>
+                <select name="tags" id="tags">
+
+                </select>
+            </div>
+            <div class="include">
+                <p>Include HTML:</p>
+                <select name="include" id="include">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <button id="btn">Generate Lorem Ipsum</button>
+
+            <textarea name="textarea" id="textarea"></textarea>
+            
+            <div class="btn">
+                <button id="copyBtn">Copy</button>
+            <button id="resetBtn">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
